@@ -50,6 +50,9 @@
   font-style: normal;
   font-weight: 400;
 }
+#result {
+  font-family: "PayPalSansSmall-Regular", Helvetica Neue, Arial, sans-serif;
+}
 .ppvx_text-input__label {
   pointer-events: none;
   text-align: initial;
