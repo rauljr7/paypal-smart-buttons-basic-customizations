@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="style.css" />
+<div id="result" style="max-width: 750px;">
+  <div class="ppvx_text-input" style="margin-top: 0.75rem;">
+    <input class="ppvx_text-input__control" id="amount" type="number" />
+    <label for="amount" class="ppvx_text-input__label">
+      <span>Amount</span>
+    </label>
+  </div>
+
+  <div id="paypal-button-container" style="margin-top: 0.75rem;"></div>
+</div>
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+<script>
+  paypal
+    .Buttons({
+      createOrder: function (data, actions) {
+        return actions.order.create({
+          purchase_units: [
+            {
+              amount: {
+                value: document.getElementById("amount").value,
+              },
+            },
+          ],
+        });
+      },
+      onApprove: function (data, actions) {
+        return actions.order.capture().then(function (details) {
+          document.getElementById("result").innerHTML =
+            "Transaction of " +
+            details.purchase_units[0].amount.value +
+            " " +
+            details.purchase_units[0].amount.currency_code +
+            " completed by " +
+            details.payer.name.given_name +
+            " " +
+            details.payer.name.surname +
+            "!";
+        });
+      },
+    })
+    .render("#paypal-button-container");
+</script>
