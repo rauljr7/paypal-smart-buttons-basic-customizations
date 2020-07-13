@@ -10,7 +10,7 @@ https://developer.paypal.com/docs/checkout/integrate/#1-set-up-your-development-
 
 > Please include the CSS file only to the smart buttons setup that include any user defined inputs. The CSS file should be included in these code snippet examples:
 
-- 3.  - Include User Defined Description.html
-- 4.  - Include User Defined Amount.html
-- 5.  - Include User Defined Invoice ID.html
-- 8.  - Multiple Conditions.html
+- Include User Defined Description.html
+- Include User Defined Amount.html
+- Include User Defined Invoice ID.html
+- Multiple Conditions.html
