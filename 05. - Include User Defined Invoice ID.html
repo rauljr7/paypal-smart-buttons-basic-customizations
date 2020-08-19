@@ -17,8 +17,8 @@
         return actions.order.create({
           purchase_units: [
             {
+              invoice_id: document.getElementById("invoice").value,
               amount: {
-                invoice_id: document.getElementById("invoice").value,
                 value: "1",
               },
             },
